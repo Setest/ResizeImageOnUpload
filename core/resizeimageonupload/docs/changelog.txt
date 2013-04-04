@@ -1,0 +1,10 @@
+Changelog for ResizeImageOnUpload integration into MODx Revolution.
+
+ResizeImageOnUpload 1.1
+==============
+- Fix some errors
+- Add new parameter "exclude_dirs_suffix"
+
+ResizeImageOnUpload 1.0
+==============
+- Initial release.
