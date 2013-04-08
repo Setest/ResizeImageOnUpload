@@ -1,0 +1,22 @@
+Changelog for ResizeImageOnUpload integration into MODx Revolution.
+
+1.1.2 (08.04.2013)
+==============
+- Fix errors;
+- Add Lexicon Entries;
+- Add "default_thumb_path" parameter;
+- Add "thumb_key" parameter;
+
+
+1.1.1 (05.04.2013)
+==============
+- Fix error which happened then mkdir is created folder and log is true;
+
+1.1
+==============
+- Fix some errors
+- Add new parameter "exclude_dirs_suffix"
+
+1.0
+==============
+- Initial release.
