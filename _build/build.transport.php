@@ -7,7 +7,7 @@ set_time_limit(0);
 /* задаем имя пакета */
 define('PKG_NAME','ResizeImageOnUpload');
 define('PKG_NAME_LOWER','resizeimageonupload');
-define('PKG_VERSION','1.0');
+define('PKG_VERSION','1.1.2');
 define('PKG_RELEASE','rc1');
  
 /* задаем пути для упаковщика */
