@@ -120,7 +120,7 @@ $config_default_thumb_param = $modx->getOption('default_thumb_param', $scriptPro
 
 $auto_alias = $modx->getOption('auto_alias', $scriptProperties, true);	// производит автоматическую транслитерацию имен файлов
 
-$create_thumbs = $modx->getOption('create_thumbs', $scriptProperties);
+$create_thumbs = $modx->getOption('create_thumbs', $scriptProperties, false);
 $thumbnail_dir = $modx->getOption('thumbnail_dir', $scriptProperties);
 $thumbnail_dir = str_replace('//', '/', $thumbnail_dir);
 $thumbnail_dir = str_replace(array("..","."), "", $thumbnail_dir);
@@ -351,7 +351,9 @@ foreach ($files as &$file) {
 				// для ключа src имя файла совпадает с исходным
 				$imgName = $filename;
 			}
-			elseif ($imgKey == 'thumb' and $create_thumbs){
+			// elseif ($imgKey == 'thumb' and $create_thumbs){
+			elseif ($imgKey == 'thumb'){
+				if (!$create_thumbs) continue;				
 				// формируем имя файла
 
 				//$imgName = MODX_BASE_PATH.$cur_dir.$def_fn.'.'.$ext.'.'.$imgKey.'.'.$ext;
@@ -386,6 +388,7 @@ foreach ($files as &$file) {
 				}
 			}
 			if ($log) $modx->log(modX::LOG_LEVEL_INFO, "Part: {$imgKey}, imgName: {$imgName}");
+			if ($log) $modx->log(modX::LOG_LEVEL_INFO, "Config: ".print_r($imgConfig,1));
 
 			// создаем объект phpThumb..
 			$phpThumb = new phpThumb();
