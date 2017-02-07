@@ -316,7 +316,7 @@ foreach ($files as &$file) {
 		return;
 	}
 
-	$extensions = explode(',', $modx->getOption('upload_images'));
+	$extensions = explode(',', strtolower($modx->getOption('upload_images')));
 	if ($log) $modx->log(modX::LOG_LEVEL_INFO, "Allowed extensions: ".implode(",", $extensions));
 	// проверям, что наша категория задана в настройках плагина
 	if ($config && array_key_exists($cur_dir, $config)) {
@@ -333,7 +333,7 @@ foreach ($files as &$file) {
 	$filename = $cur_dir.$name;
 	if ($log) $modx->log(modX::LOG_LEVEL_INFO, "SourceFilename: {$filename}");
 	$def_fn = pathinfo($name, PATHINFO_FILENAME);
-	$ext = pathinfo($name, PATHINFO_EXTENSION);
+	$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 	// проверяем, что расширение файла задано в настройках MODX, как изображение
 	if (in_array($ext, $extensions)) {
 
